@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harleen Kaur Hans — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F7F6F2;
+    --ink: #1B1E23;
+    --muted: #6B7280;
+    --accent: #1F5C55;
+    --accent-soft: #E4EDE9;
+    --hairline: #DEDAD1;
+    --max: 720px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--accent); text-decoration-color: rgba(31,92,85,0.35); text-underline-offset: 3px; }
+  a:hover{ text-decoration-color: var(--accent); }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---- Nav ---- */
+  nav{
+    position: sticky; top:0; z-index: 10;
+    background: rgba(247,246,242,0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content: space-between;
+    padding-top: 14px; padding-bottom: 14px;
+  }
+  nav .brand{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav ul{
+    list-style: none; display:flex; gap: 22px; margin:0; padding:0;
+  }
+  nav a{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav a:hover{ color: var(--accent); }
+
+  /* ---- Hero ---- */
+  header.hero{
+    padding: 84px 0 56px;
+  }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(38px, 6vw, 54px);
+    line-height: 1.08;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .tagline{
+    font-size: 18px;
+    color: #3A3F46;
+    max-width: 54ch;
+    margin: 0 0 28px;
+  }
+  .hero-meta{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 30px;
+  }
+
+  /* signature waveform */
+  .wave{ width: 100%; max-width: 420px; height: 40px; display:block; margin-bottom: 8px; }
+  .wave path{
+    fill:none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round;
+  }
+
+  .cta-row{ display:flex; gap: 14px; flex-wrap: wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 3px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  .btn.primary{
+    background: var(--ink); color: var(--bg); border-color: var(--ink);
+  }
+  .btn.primary:hover{ background: var(--accent); border-color: var(--accent); }
+  .btn:not(.primary):hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* ---- Section shell ---- */
+  section{ padding: 56px 0; border-top: 1px solid var(--hairline); }
+  .section-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 22px;
+  }
+  h2.section-title{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 26px;
+    margin: 0 0 22px;
+  }
+
+  /* ---- About ---- */
+  #about p{ margin: 0 0 16px; color:#2E3238; max-width: 62ch; }
+
+  /* ---- Projects ---- */
+  .project{
+    padding: 22px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .project:first-of-type{ border-top: none; padding-top: 0; }
+  .project-head{
+    display:flex; align-items:baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .project-title{
+    font-family: 'Newsreader', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .project-link{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  .project-stack{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  .project p.desc{ margin: 0; color: #3A3F46; max-width: 60ch; }
+
+  .all-projects{
+    margin-top: 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+  }
+
+  /* ---- Experience ---- */
+  .xp{ margin-bottom: 22px; }
+  .xp:last-child{ margin-bottom: 0; }
+  .xp-row{
+    display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .xp-role{ font-weight: 600; }
+  .xp-date{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .xp-org{ color: var(--muted); font-size: 15px; margin: 0 0 6px; }
+  .xp p.desc{ margin:0; color:#3A3F46; max-width: 62ch; }
+
+  /* ---- Skills ---- */
+  .skills-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 20px 32px;
+  }
+  @media (max-width: 560px){ .skills-grid{ grid-template-columns: 1fr; } }
+  .skill-cat h3{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  .skill-cat p{ margin:0; color:#3A3F46; font-size: 14.5px; }
+
+  /* ---- Footer ---- */
+  footer{
+    border-top: 1px solid var(--hairline);
+    padding: 40px 0 60px;
+  }
+  footer .wrap{
+    display:flex; justify-content: space-between; align-items:flex-end; flex-wrap: wrap; gap: 16px;
+  }
+  footer .links{ display:flex; gap: 18px; flex-wrap: wrap; }
+  footer a{ font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
+  footer .note{ color: var(--muted); font-size: 13px; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">HKH</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <svg class="wave" viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0,20 L30,20 L38,4 L46,36 L54,20 L80,20 L88,10 L96,30 L104,20 L420,20" />
+    </svg>
+    <p class="eyebrow">Software Engineer · AI/ML</p>
+    <h1>Harleen Kaur Hans</h1>
+    <p class="tagline">Fourth-year Computer Science student at Carleton University, building RAG pipelines, multi-agent AI systems, and full-stack applications — with a research background in radar signal processing.</p>
+    <p class="hero-meta">Ottawa, ON · Secret Security Clearance · Available Sept 2026 (Co-op)</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://github.com/Harleen1kaurH" target="_blank" rel="noopener">View GitHub Projects</a>
+      <a class="btn" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <p class="section-label">01 — About</p>
+    <p>I'm an Honors Computer Science student at Carleton University, majoring in AI/ML with a minor in Mathematics. My work spans two threads: applied AI engineering — RAG pipelines, multi-agent orchestration, and LLM-powered tools — and signal research, from my time optimizing Over-the-Horizon Radar algorithms at Defence Research and Development Canada (DRDC).</p>
+    <p>I like building things end-to-end: from a research idea, to a working pipeline, to something containerized and deployed. Outside of coursework, I've published a scientific report with DRDC and presented a conference paper on Over-the-Horizon Radar at the International Space Research Conference 2026.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="section-label">02 — Projects</p>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Multi-Agent Code Review Pipeline</h3>
+        <a class="project-link" href="https://github.com/Harleen1kaurH/MultiAgentOrchestration_CodeReview" target="_blank" rel="noopener">View code →</a>
+      </div>
+      <p class="project-stack">CrewAI · Gemini · Python</p>
+      <p class="desc">A multi-agent pipeline that reviews GitHub pull requests for bugs, security issues, and style problems using parallel ReAct agents, consolidating findings into a structured markdown report.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Personal Study Assistant</h3>
+        <a class="project-link" href="https://github.com/Harleen1kaurH/Personal-Study-Assistant" target="_blank" rel="noopener">View code →</a>
+      </div>
+      <p class="project-stack">LangChain · ChromaDB · RAGAS · FastAPI</p>
+      <p class="desc">A Retrieval-Augmented Generation assistant built from scratch: upload course notes and get grounded answers, flashcards, and quizzes, with structure-first chunking and persistent embeddings.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Study Buddy — Collaborative Study Platform</h3>
+        <a class="project-link" href="https://github.com/Harleen1kaurH" target="_blank" rel="noopener">View code →</a>
+      </div>
+      <p class="project-stack">React · FastAPI · PostgreSQL · Docker</p>
+      <p class="desc">A full-stack platform for students to coordinate study groups, with JWT authentication and a Jenkins CI/CD pipeline covering install, test, build, and deploy stages.</p>
+    </div>
+
+    <p class="all-projects">More on GitHub → <a href="https://github.com/Harleen1kaurH?tab=repositories" target="_blank" rel="noopener">github.com/Harleen1kaurH</a></p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="section-label">03 — Experience</p>
+
+    <div class="xp">
+      <div class="xp-row">
+        <span class="xp-role">Research Assistant</span>
+        <span class="xp-date">May – Dec 2025</span>
+      </div>
+      <p class="xp-org">Defence Research and Development Canada</p>
+      <p class="desc">Optimized algorithms for an Over-the-Horizon Radar system, applying statistical modelling and radio wave propagation analysis using MATLAB and Python.</p>
+    </div>
+
+    <div class="xp">
+      <div class="xp-row">
+        <span class="xp-role">Teaching Assistant</span>
+        <span class="xp-date">Sept 2024 – Apr 2026</span>
+      </div>
+      <p class="xp-org">Carleton University — Discrete Structures &amp; Python</p>
+      <p class="desc">Taught discrete mathematics concepts and supported Python assignments through weekly tutorials, grading, and one-on-one guidance.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="section-label">04 — Skills</p>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h3>Languages</h3>
+        <p>Python, Java, C, C++, JavaScript</p>
+      </div>
+      <div class="skill-cat">
+        <h3>AI / ML</h3>
+        <p>RAG, LangChain, ChromaDB, CrewAI, RAGAS, scikit-learn, LLM APIs</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Infrastructure</h3>
+        <p>Docker, Kubernetes, GitHub Actions, AWS, Linux, Bash</p>
+      </div>
+      <div class="skill-cat">
+        <h3>Web</h3>
+        <p>React, FastAPI, HTML/CSS, PostgreSQL</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <p class="section-label" style="margin-bottom:10px;">05 — Contact</p>
+      <p class="note">Ottawa, ON · Open to co-op &amp; internship opportunities</p>
+    </div>
+    <div class="links">
+      <a href="mailto:harleenkaurhans@cmail.carleton.ca">Email</a>
+      <a href="https://linkedin.com/in/harleen-kaur-hans-523997289" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Harleen1kaurH" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
