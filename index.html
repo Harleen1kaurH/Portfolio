@@ -197,6 +197,8 @@
   }
   .xp-org{ color: var(--muted); font-size: 15px; margin: 0 0 6px; }
   .xp p.desc{ margin:0; color:#3A3F46; max-width: 62ch; }
+  .xp ul.desc-list{ margin: 0; padding-left: 18px; color:#3A3F46; max-width: 62ch; }
+  .xp ul.desc-list li{ margin-bottom: 4px; }
 
   /* ---- Skills ---- */
   .skills-grid{
@@ -231,7 +233,6 @@
 </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap">
     <a class="brand" href="#top">HKH</a>
@@ -252,8 +253,8 @@
     </svg>
     <p class="eyebrow">Software Engineer · AI/ML</p>
     <h1>Harleen Kaur Hans</h1>
-    <p class="tagline">Fourth-year Computer Science student at Carleton University, building RAG pipelines, multi-agent AI systems, and full-stack applications — with a research background in radar signal processing.</p>
-    <p class="hero-meta">Ottawa, ON · Secret Security Clearance · Available Sept 2026 (Co-op)</p>
+    <p class="tagline">Fourth-year Honors Computer Science (AI/ML) student at Carleton University, building RAG pipelines, multi-agent AI systems, and full-stack applications — with a research background in radar signal processing.</p>
+    <p class="hero-meta">Ottawa, ON · Secret Security Clearance · Junior Functional IT Analyst @ IRCC</p>
     <div class="cta-row">
       <a class="btn primary" href="https://github.com/Harleen1kaurH" target="_blank" rel="noopener">View GitHub Projects</a>
       <a class="btn" href="#contact">Get in Touch</a>
@@ -264,8 +265,8 @@
 <section id="about">
   <div class="wrap">
     <p class="section-label">01 — About</p>
-    <p>I'm an Honors Computer Science student at Carleton University, majoring in AI/ML with a minor in Mathematics. My work spans two threads: applied AI engineering — RAG pipelines, multi-agent orchestration, and LLM-powered tools — and signal research, from my time optimizing Over-the-Horizon Radar algorithms at Defence Research and Development Canada (DRDC).</p>
-    <p>I like building things end-to-end: from a research idea, to a working pipeline, to something containerized and deployed. Outside of coursework, I've published a scientific report with DRDC and presented a conference paper on Over-the-Horizon Radar at the International Space Research Conference 2026.</p>
+    <p>I'm a fourth-year Honors Computer Science student at Carleton University, majoring in AI/ML with a minor in Mathematics. I'm currently working as a Junior Functional IT Analyst at Immigration, Refugees and Citizenship Canada (IRCC), where I'm developing a generative AI chatbot for requirement elicitation using schema-based RAG with knowledge graphs, and authoring functional design documents for client-submitted change requests.</p>
+    <p>My work otherwise spans two threads: applied AI engineering — RAG pipelines, multi-agent orchestration, and LLM-powered tools — and signal research, from my time optimizing Over-the-Horizon Radar (OTHR) algorithms at Defence Research and Development Canada (DRDC). I've published two technical writings from that work, including a paper on OTHR performance optimization presented at the International Space Research Conference 2026.</p>
   </div>
 </section>
 
@@ -278,26 +279,26 @@
         <h3 class="project-title">Multi-Agent Code Review Pipeline</h3>
         <a class="project-link" href="https://github.com/Harleen1kaurH/MultiAgentOrchestration_CodeReview" target="_blank" rel="noopener">View code →</a>
       </div>
-      <p class="project-stack">CrewAI · Gemini · Python</p>
-      <p class="desc">A multi-agent pipeline that reviews GitHub pull requests for bugs, security issues, and style problems using parallel ReAct agents, consolidating findings into a structured markdown report.</p>
+      <p class="project-stack">CrewAI · Python</p>
+      <p class="desc">A multi-agent code review pipeline built with CrewAI, orchestrating specialized agents for logic review, security analysis, and style review to automate structured pull-request feedback — parsing code diffs and PR requests and consolidating review concerns into actionable summaries exported as PDF reports.</p>
     </div>
 
     <div class="project">
       <div class="project-head">
-        <h3 class="project-title">Personal Study Assistant</h3>
+        <h3 class="project-title">AI-Powered Personal Study Assistant</h3>
         <a class="project-link" href="https://github.com/Harleen1kaurH/Personal-Study-Assistant" target="_blank" rel="noopener">View code →</a>
       </div>
-      <p class="project-stack">LangChain · ChromaDB · RAGAS · FastAPI</p>
-      <p class="desc">A Retrieval-Augmented Generation assistant built from scratch: upload course notes and get grounded answers, flashcards, and quizzes, with structure-first chunking and persistent embeddings.</p>
+      <p class="project-stack">RAG Pipeline · LangChain · ChromaDB · RAGAS</p>
+      <p class="desc">A Retrieval-Augmented Generation study assistant built with LangChain and ChromaDB, enabling semantic search, flashcard generation, and contextual Q&A over personal course notes and textbooks — with document chunking, embedding generation, and vector retrieval pipelines grounding responses in user-provided material, evaluated for faithfulness, answer relevancy, and context precision using the RAGAS framework.</p>
     </div>
 
     <div class="project">
       <div class="project-head">
-        <h3 class="project-title">Study Buddy — Collaborative Study Platform</h3>
+        <h3 class="project-title">Study Buddy — Full-Stack Collaborative Study Platform</h3>
         <a class="project-link" href="https://github.com/Harleen1kaurH" target="_blank" rel="noopener">View code →</a>
       </div>
-      <p class="project-stack">React · FastAPI · PostgreSQL · Docker</p>
-      <p class="desc">A full-stack platform for students to coordinate study groups, with JWT authentication and a Jenkins CI/CD pipeline covering install, test, build, and deploy stages.</p>
+      <p class="project-stack">React · FastAPI · PostgreSQL · Docker · AWS</p>
+      <p class="desc">A full-stack collaborative study platform with a React front end and a FastAPI-based RESTful design, using PostgreSQL for persistent data storage — containerized with Docker and deployed on AWS for scalable, reproducible hosting.</p>
     </div>
 
     <p class="all-projects">More on GitHub → <a href="https://github.com/Harleen1kaurH?tab=repositories" target="_blank" rel="noopener">github.com/Harleen1kaurH</a></p>
@@ -310,19 +311,32 @@
 
     <div class="xp">
       <div class="xp-row">
+        <span class="xp-role">Junior Functional IT Analyst</span>
+        <span class="xp-date">Aug 2026 – Present</span>
+      </div>
+      <p class="xp-org">Immigration, Refugees and Citizenship Canada (IRCC)</p>
+      <ul class="desc-list">
+        <li>Developing a generative AI chatbot for requirement elicitation from the EA Sparx repository, using schema-based RAG with knowledge graphs to address Oracle BI challenges.</li>
+        <li>Analyzing dependencies and impact of client-submitted change requests, and authoring functional design documents presented to clients, developers, and testers to secure green reviews.</li>
+        <li>Participating in Agile testing cycles and bug triage, collaborating with developers to resolve issues and maintaining a shared library of standardized documentation.</li>
+      </ul>
+    </div>
+
+    <div class="xp">
+      <div class="xp-row">
         <span class="xp-role">Research Assistant</span>
         <span class="xp-date">May – Dec 2025</span>
       </div>
-      <p class="xp-org">Defence Research and Development Canada</p>
-      <p class="desc">Optimized algorithms for an Over-the-Horizon Radar system, applying statistical modelling and radio wave propagation analysis using MATLAB and Python.</p>
+      <p class="xp-org">Defence Research and Development Canada — Department of National Defence</p>
+      <p class="desc">Optimized algorithms for an Over-the-Horizon Radar system, applying statistical modelling and radio wave propagation analysis using MATLAB and Python. Published 2 technical writings, including a paper on OTHR performance optimization presented at the International Space Research Conference 2026.</p>
     </div>
 
     <div class="xp">
       <div class="xp-row">
         <span class="xp-role">Teaching Assistant</span>
-        <span class="xp-date">Sept 2024 – Apr 2026</span>
+        <span class="xp-date">Sept 2024 – Present</span>
       </div>
-      <p class="xp-org">Carleton University — Discrete Structures &amp; Python</p>
+      <p class="xp-org">Carleton University — COMP 2804: Discrete Structures, COMP 1405: Python</p>
       <p class="desc">Taught discrete mathematics concepts and supported Python assignments through weekly tutorials, grading, and one-on-one guidance.</p>
     </div>
   </div>
@@ -334,19 +348,19 @@
     <div class="skills-grid">
       <div class="skill-cat">
         <h3>Languages</h3>
-        <p>Python, Java, C, C++, JavaScript</p>
+        <p>Python, Java, C, C++, Web Development (HTML, CSS, JavaScript, React)</p>
       </div>
       <div class="skill-cat">
-        <h3>AI / ML</h3>
-        <p>RAG, LangChain, ChromaDB, CrewAI, RAGAS, scikit-learn, LLM APIs</p>
+        <h3>AI Engineering</h3>
+        <p>RAG, LangChain, ChromaDB, CrewAI multi-agent orchestration, RAGAS evaluation, LLM APIs (Claude, OpenAI), scikit-learn, pandas, prompt engineering</p>
       </div>
       <div class="skill-cat">
-        <h3>Infrastructure</h3>
-        <p>Docker, Kubernetes, GitHub Actions, AWS, Linux, Bash</p>
+        <h3>Software Development</h3>
+        <p>OOP, Data Structures &amp; Algorithms, RESTful API design, Systems &amp; Concurrent Programming</p>
       </div>
       <div class="skill-cat">
-        <h3>Web</h3>
-        <p>React, FastAPI, HTML/CSS, PostgreSQL</p>
+        <h3>Technical Tools</h3>
+        <p>Git, Bash, Windows, Linux, Docker, MATLAB, MySQL</p>
       </div>
     </div>
   </div>
@@ -365,6 +379,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
